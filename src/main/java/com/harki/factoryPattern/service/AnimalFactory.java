@@ -1,19 +1,22 @@
 package com.harki.factoryPattern.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
 import com.harki.factoryPattern.model.Animal;
 import com.harki.factoryPattern.model.AnimalType;
-
+@Service
 public class AnimalFactory {
-
+	@Qualifier("Dog")
+	@Autowired
 	private Animal dog;
+	@Qualifier("Cat")
+	@Autowired
 	private Animal cat;
+	@Qualifier("Lion")
+	@Autowired
 	private Animal lion;
-
-	public AnimalFactory(Animal dog, Animal cat, Animal lion) {
-		this.dog = dog;
-		this.cat = cat;
-		this.lion = lion;
-	}
 
 	public Animal getAnimal(AnimalType type) {
 		if (type.equals(AnimalType.DOG)) {

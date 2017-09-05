@@ -26,10 +26,10 @@ public class AnimalFactoryTest {
 
 		Animal animal = factory.getAnimal(AnimalType.DOG);
 		Assert.assertTrue(animal instanceof Dog);
-		
+
 		animal = factory.getAnimal(AnimalType.CAT);
 		Assert.assertTrue(animal instanceof Cat);
-		
+
 		animal = factory.getAnimal(AnimalType.LION);
 		Assert.assertTrue(animal instanceof Lion);
 
